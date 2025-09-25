@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Reading Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="background-shapes"></div>
+
+    <div class="card">
+        <header>
+            <h1>AI Reading Assistant</h1>
+            <p>Your personal tool for easy reading.</p>
+        </header>
+
+        <main>
+            <form id="tts-form">
+                <div class="form-group">
+                    <label for="text-input">1. Enter or paste your text here:</label>
+                    <textarea id="text-input" name="text" rows="8" placeholder="Type or paste the text you want to hear..."></textarea>
+                </div>
+
+                <div class="controls-group">
+                    <label>Adjust text size:</label>
+                    <button type="button" id="decrease-font" class="control-btn" aria-label="Decrease font size">-</button>
+                    <button type="button" id="increase-font" class="control-btn" aria-label="Increase font size">+</button>
+                </div>
+
+                <div class="form-group">
+                    <label for="voice-sample-input">2. Upload a voice sample:</label>
+                    <div class="file-upload-wrapper">
+                        <label for="voice-sample-input" class="file-upload-button">
+                            <i class="fas fa-upload"></i> Choose File
+                        </label>
+                        <input type="file" id="voice-sample-input" name="voice_sample" accept=".wav, .mp3">
+                        <span id="filename-display">No file chosen...</span>
+                    </div>
+                </div>
+
+                <button type="submit" id="speak-btn" class="submit-btn">
+                    <span class="btn-text"><i class="fas fa-play-circle"></i> Speak Aloud</span>
+                </button>
+
+                <div id="loading-container" class="loading-container" style="display: none;">
+                    <div class="loader"></div>
+                    <p>Crafting the audio... this can take a moment.</p>
+                </div>
+
+                <div id="audio-player-container" class="audio-player-container" style="display: none;">
+                     <label>Your audio is ready:</label>
+                    <audio id="audio-player" controls></audio>
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

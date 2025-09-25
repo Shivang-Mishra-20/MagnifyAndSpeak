@@ -81,7 +81,3 @@ Follow these instructions to get a local copy up and running.
 3.  **Upload Voice:** Click "Choose File" and select a clear MP3 or WAV audio file (10-20 seconds long) of the desired voice.
 4.  **Generate Audio:** Click the "Speak Aloud" button and wait for the AI to process the request. This may take a minute or two depending on your computer's hardware.
 5.  **Listen:** The generated audio will appear in the player at the bottom.
-
-## 🙏 Acknowledgments
-
-* This project would not be possible without the incredible work done by the team at [Coqui TTS](https://github.com/coqui-ai/TTS).
